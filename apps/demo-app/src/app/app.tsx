@@ -1,11 +1,11 @@
-import {
-  FluidText,
-  TypographyProvider,
-} from '@functions/dcw-react-typography';
+import { FluidText, TypographyProvider } from '@functions/dcw-react-typography';
+import { FluentProvider, webLightTheme } from '@fluentui/react-components';
+import { Button } from '@functions/dcw-react-atoms';
 
 export function App() {
   return (
     <div>
+      <FluentProvider theme={webLightTheme}>
       <TypographyProvider
         overrides={{
           // optional: tweak a fluid token on the fly
@@ -34,7 +34,25 @@ export function App() {
             A tiny caption style.
           </FluidText>
         </div>
+        <div className="app-container">
+          <div style={{ marginTop: '1.5rem' }}>
+            <Button
+              variant="primary"
+              onClick={() => alert('Primary Button clicked')}
+            >
+              Primary Button
+            </Button>
+            <Button
+              variant="secondary"
+              onClick={() => alert('Secondary Button clicked')}
+              style={{ marginLeft: '1rem' }}
+            >
+              Secondary Button
+            </Button>
+          </div>
+        </div>
       </TypographyProvider>
+      </FluentProvider>
     </div>
   );
 }

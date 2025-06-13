@@ -8,6 +8,9 @@
     },
     {
       "path": "./libs/dcw-react-typography"
+    },
+    {
+      "path": "./libs/dcw-react-atoms"
     }
   ],
   "ts-node": {

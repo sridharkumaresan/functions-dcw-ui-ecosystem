@@ -3,6 +3,9 @@
   "include": [],
   "references": [
     {
+      "path": "../../libs/dcw-react-atoms"
+    },
+    {
       "path": "../../libs/dcw-react-typography"
     },
     {

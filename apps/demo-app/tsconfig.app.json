@@ -32,6 +32,9 @@
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
   "references": [
     {
+      "path": "../../libs/dcw-react-atoms/tsconfig.lib.json"
+    },
+    {
       "path": "../../libs/dcw-react-typography/tsconfig.lib.json"
     }
   ]
