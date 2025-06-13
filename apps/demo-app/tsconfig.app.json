@@ -35,6 +35,9 @@
       "path": "../../libs/dcw-react-atoms/tsconfig.lib.json"
     },
     {
+      "path": "../../libs/dcw-react-theme/tsconfig.lib.json"
+    },
+    {
       "path": "../../libs/dcw-react-typography/tsconfig.lib.json"
     }
   ]

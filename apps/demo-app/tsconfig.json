@@ -6,6 +6,9 @@
       "path": "../../libs/dcw-react-atoms"
     },
     {
+      "path": "../../libs/dcw-react-theme"
+    },
+    {
       "path": "../../libs/dcw-react-typography"
     },
     {
