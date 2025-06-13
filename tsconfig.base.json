@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "composite": true,
     "declarationMap": true,
     "emitDeclarationOnly": true,
@@ -16,6 +17,16 @@
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",
-    "customConditions": ["development"]
+    "customConditions": ["development"],
+    "paths": {
+      "@functions/dcw-react-atoms": ["libs/dcw-react-atoms/src/index.ts"],
+      "@functions/dcw-react-organisms/*": [
+        "libs/dcw-react-organisms/*/src/index.ts"
+      ],
+      "@functions/dcw-react-theme": ["libs/dcw-react-theme/src/index.ts"],
+      "@functions/dcw-react-typography": [
+        "libs/dcw-react-typography/src/index.ts"
+      ]
+    }
   }
 }
