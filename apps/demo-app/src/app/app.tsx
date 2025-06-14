@@ -4,7 +4,6 @@ import { ThemeProvider, useTheme } from '@functions/dcw-react-theme';
 import { TextInput } from '@functions/dcw-react-atoms';
 import { Button } from '@functions/dcw-react-atoms';
 import { PartialTheme } from '@fluentui/react-components';
-import { FunctionsDcwReactOrganismsCarousel } from '@functions/dcw-react-organisms-carousel';
 import { HeroBanner } from '@functions/dcw-react-organisms-hero-banner';
 
 const customFluentOverrides: PartialTheme = {
@@ -94,21 +93,84 @@ export function App() {
             </div>
           </div>
           <div className="app-container">
-            <HeroBanner
-              imageUrl="https://picsum.photos/1200/600"
-              title="Welcome to Our Campus"
-              subtitle="Explore sustainability initiatives and events"
-              primaryAction={{
-                label: 'Get Started',
-                onClick: () => alert('Primary clicked'),
-              }}
-              secondaryAction={{
-                label: 'Learn More',
-                onClick: () => alert('Secondary clicked'),
-              }}
-              variant="split"
-              overlayColor="rgba(0,0,0,0.5)"
-            />
+            <div style={{ display: 'grid', gap: 64, padding: 32 }}>
+              {/* V1: default color (no background prop) */}
+              <HeroBanner
+                title="Default Theme Color"
+                subtitle="Minimal height with default brand color"
+                primaryAction={{ label: 'Action', onClick: () => {} }}
+              />
+
+              {/* V2: explicit color combo */}
+              <HeroBanner
+                layout="color"
+                background={{ type: 'preset', preset: 'orange' }}
+                title="Orange Preset"
+                subtitle="Dark-grey text on vibrant orange"
+                primaryAction={{ label: 'Get Started', onClick: () => {} }}
+              />
+
+              {/* V3: full-bleed background image */}
+              <HeroBanner
+                layout="fullImage"
+                background={{
+                  type: 'image',
+                  url: 'https://picsum.photos/1200/400',
+                }}
+                title="Full-Bleed Image"
+                subtitle="A stunning hero photo"
+                primaryAction={{ label: 'Explore', onClick: () => {} }}
+              />
+
+              {/* V4: split with right-side image */}
+              <HeroBanner
+                layout="split"
+                background={{
+                  type: 'image',
+                  url: 'https://picsum.photos/600/400',
+                }}
+                title="Split (Image Right)"
+                subtitle="Content left, image right"
+                primaryAction={{ label: 'Learn More', onClick: () => {} }}
+              />
+
+              {/* V4-alt: split-reverse (image left) */}
+              <HeroBanner
+                layout="split-reverse"
+                background={{
+                  type: 'image',
+                  url: 'https://picsum.photos/600/400?grayscale',
+                }}
+                title="Split-Reverse (Image Left)"
+                subtitle="Image left, content right"
+                primaryAction={{ label: 'Details', onClick: () => {} }}
+              />
+
+              {/* V5: compact version (height=30vh) */}
+              <HeroBanner
+                layout="default"
+                size="compact"
+                title="Compact Version"
+                subtitle="Shorter height, minimal design"
+                primaryAction={{ label: 'OK', onClick: () => {} }}
+              />
+
+              {/* V6: split + injected SearchBar, responsive */}
+              <HeroBanner
+                layout="split"
+                background={{
+                  type: 'image',
+                  url: 'https://picsum.photos/600/400?blur',
+                }}
+                title="Split + Search"
+                subtitle="On mobile the image drops below"
+                primaryAction={{ label: 'Search', onClick: () => {} }}
+              >
+                <div style={{ margin: 'var(--spacing-md) 0' }}>
+                  <TextInput placeholder="Search intranet…" />
+                </div>
+              </HeroBanner>
+            </div>
           </div>
         </TypographyProvider>
       </ThemeProvider>

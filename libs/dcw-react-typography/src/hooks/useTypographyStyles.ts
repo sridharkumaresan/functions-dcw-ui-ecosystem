@@ -8,6 +8,9 @@ import { Preset, presetMap } from '../presets/presetMap';
 export function useTypographyStyles(preset: Preset) {
   return useMemo(() => {
     const token = presetMap[preset];
+    if (!token) {
+      throw new Error(`useTypographyStyles: preset "${preset}" not found in presetMap`);
+    }
     // Distinguish fluid vs static by checking for minSize
     if ('minSize' in token) {
       return createFluidStyle(token as any);

@@ -1,45 +1,56 @@
 import { makeStyles, shorthands } from '@griffel/react';
 import { mediaQueries } from '@functions/dcw-react-theme';
 
-type Slots = 'root' | 'overlay' | 'content' | 'subtitle' | 'actions';
+type Slots =
+  | 'root'
+  | 'overlay'
+  | 'content'
+  | 'imageWrapper'
+  | 'image'
+  | 'actions';
 
-export const useHeroBannerStyles = makeStyles<Slots>({
+export const useStyles = makeStyles<Slots>({
   root: {
     position: 'relative',
     display: 'flex',
-    alignItems: 'center',
-    minHeight: '60vh',
-    color: 'var(--color-neutralLight)',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    width: '100%',
+    // static padding; CSS var resolves at runtime
     ...shorthands.padding('var(--spacing-lg)'),
     [mediaQueries.md]: {
-      minHeight: '40vh',
       ...shorthands.padding('var(--spacing-md)'),
     },
   },
-
   overlay: {
     position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
+    inset: 0,
   },
-
   content: {
     position: 'relative',
     zIndex: 1,
-    maxWidth: '600px',
+    flex: '1 1 auto',
+    width: '100%',
+    maxWidth: '640px',
+    margin: '0 auto',
   },
-
-  subtitle: {
-    marginTop: 'var(--spacing-sm)',
+  imageWrapper: {
+    flex: '1 1 50%',
+    width: '100%',
+    height: '200px',
+    position: 'relative',
+    '@media (min-width: 768px)': {
+      height: 'auto',
+    },
   },
-
+  image: {
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover',
+    display: 'block',
+  },
   actions: {
     display: 'flex',
     gap: 'var(--spacing-sm)',
     marginTop: 'var(--spacing-md)',
+    justifyContent: 'center',
   },
 });
