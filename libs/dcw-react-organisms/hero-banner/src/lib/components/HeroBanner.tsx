@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStyles } from './../HeroBanner.styles';
 import { useTypographyStyles } from '@functions/dcw-react-typography';
-import { bannerColorPresets } from './../bannerColorPresets';
+import { bannerColorPresets } from '@functions/dcw-react-theme';
 import type { HeroBannerProps } from './../HeroBanner.types';
 import { Button } from '@functions/dcw-react-atoms';
 

@@ -5,3 +5,4 @@ export * from './lib/themeCss';
 export * from './lib/ThemeContext';
 export * from './lib/ThemeProvider';
 export * from './lib/breakpoints';
+export * from './lib/colorPresets';
