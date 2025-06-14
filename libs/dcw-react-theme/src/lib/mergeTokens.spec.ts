@@ -1,4 +1,3 @@
-// libs/dcw-react-theme/src/lib/mergeTokens.spec.ts
 import { mergeTokens, createThemeTokens, ThemeTokens } from './mergeTokens';
 import { defaultColorTokens } from './colorTokens';
 import { defaultSpacingTokens } from './spacingTokens';

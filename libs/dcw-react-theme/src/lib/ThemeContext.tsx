@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react';
+import { createContext, useContext } from 'react';
 import { createThemeTokens, ThemeTokens } from './mergeTokens';
 
 // Default tokens (no overrides)

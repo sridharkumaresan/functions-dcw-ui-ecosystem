@@ -1,4 +1,3 @@
-// src/lib/ThemeProvider.tsx
 import React, { ReactNode, useMemo } from 'react';
 import {
   FluentProvider,

@@ -14,6 +14,15 @@
     },
     {
       "path": "./libs/dcw-react-theme"
+    },
+    {
+      "path": "./libs/dcw-react-organisms"
+    },
+    {
+      "path": "./libs/dcw-react-organisms/carousel"
+    },
+    {
+      "path": "./libs/dcw-react-organisms/hero-banner"
     }
   ],
   "ts-node": {

@@ -20,6 +20,12 @@
     "customConditions": ["development"],
     "paths": {
       "@functions/dcw-react-atoms": ["libs/dcw-react-atoms/src/index.ts"],
+      "@functions/dcw-react-organisms-carousel": [
+        "libs/dcw-react-organisms/carousel/src/index.ts"
+      ],
+      "@functions/dcw-react-organisms-hero-banner": [
+        "libs/dcw-react-organisms/hero-banner/src/index.ts"
+      ],
       "@functions/dcw-react-organisms/*": [
         "libs/dcw-react-organisms/*/src/index.ts"
       ],

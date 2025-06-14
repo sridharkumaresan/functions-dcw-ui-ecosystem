@@ -32,6 +32,12 @@
   "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
   "references": [
     {
+      "path": "../../libs/dcw-react-organisms/hero-banner/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/dcw-react-organisms/carousel/tsconfig.lib.json"
+    },
+    {
       "path": "../../libs/dcw-react-atoms/tsconfig.lib.json"
     },
     {

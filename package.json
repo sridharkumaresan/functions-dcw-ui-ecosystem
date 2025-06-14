@@ -81,7 +81,8 @@
   },
   "workspaces": [
     "apps/*",
-    "libs/*"
+    "libs/*",
+    "libs/dcw-react-organisms/*"
   ],
   "nx": {
     "includedScripts": [],

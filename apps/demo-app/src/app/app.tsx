@@ -4,6 +4,8 @@ import { ThemeProvider, useTheme } from '@functions/dcw-react-theme';
 import { TextInput } from '@functions/dcw-react-atoms';
 import { Button } from '@functions/dcw-react-atoms';
 import { PartialTheme } from '@fluentui/react-components';
+import { FunctionsDcwReactOrganismsCarousel } from '@functions/dcw-react-organisms-carousel';
+import { HeroBanner } from '@functions/dcw-react-organisms-hero-banner';
 
 const customFluentOverrides: PartialTheme = {
   // these slot names come from webLightTheme
@@ -90,6 +92,23 @@ export function App() {
                 marginBottomKey="md"
               />
             </div>
+          </div>
+          <div className="app-container">
+            <HeroBanner
+              imageUrl="https://picsum.photos/1200/600"
+              title="Welcome to Our Campus"
+              subtitle="Explore sustainability initiatives and events"
+              primaryAction={{
+                label: 'Get Started',
+                onClick: () => alert('Primary clicked'),
+              }}
+              secondaryAction={{
+                label: 'Learn More',
+                onClick: () => alert('Secondary clicked'),
+              }}
+              variant="split"
+              overlayColor="rgba(0,0,0,0.5)"
+            />
           </div>
         </TypographyProvider>
       </ThemeProvider>

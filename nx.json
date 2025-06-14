@@ -30,7 +30,8 @@
           "buildDepsName": "build-deps",
           "watchDepsName": "watch-deps"
         }
-      }
+      },
+      "exclude": ["dcw-react-organisms/*", "libs/dcw-react-organisms/*"]
     },
     {
       "plugin": "@nx/react/router-plugin",
@@ -76,6 +77,15 @@
         "buildStorybookTargetName": "build-storybook",
         "testStorybookTargetName": "test-storybook",
         "staticStorybookTargetName": "static-storybook"
+      }
+    },
+    {
+      "plugin": "@nx/js/typescript",
+      "include": ["dcw-react-organisms/*", "libs/dcw-react-organisms/*"],
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        }
       }
     }
   ],
