@@ -1,7 +1,7 @@
 ```markdown
 # 🌐 DCW UI Ecosystem Monorepo
 
-![Logo](./apps/demo-app/src/assets/logos/L2.png)
+[![Logo](https://github.com/user-attachments/assets/b31f5356-4543-43b8-8b69-5750c6087d8d)]
 
 This **Nx** workspace (`functions-dcw-ui-ecosystem`) houses our shared UI libraries and SPFx WebParts for the DCW UI Center of Excellence:
 
