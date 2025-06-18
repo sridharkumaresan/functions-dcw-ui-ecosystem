@@ -5,6 +5,7 @@ import { TextInput } from '@functions/dcw-react-atoms';
 import { Button } from '@functions/dcw-react-atoms';
 import { PartialTheme } from '@fluentui/react-components';
 import { HeroBanner } from '@functions/dcw-react-organisms-hero-banner';
+import { Add24Filled, Dismiss24Regular } from '@fluentui/react-icons';
 
 const customFluentOverrides: PartialTheme = {
   // these slot names come from webLightTheme
@@ -12,9 +13,23 @@ const customFluentOverrides: PartialTheme = {
   colorBrandForeground1: '#FFFFFF',
   colorNeutralBackground1: '#EEEEEE',
 };
-
+const Section = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) => (
+  <section style={{ marginBottom: '2.5rem' }}>
+    <h2 style={{ fontSize: '1.25rem', marginBottom: '1rem' }}>{title}</h2>
+    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+      {children}
+    </div>
+  </section>
+);
 export function App() {
   const { colors, spacing } = useTheme();
+  const handleClick = () => alert('You clicked the button!');
   return (
     <div>
       <ThemeProvider
@@ -56,40 +71,44 @@ export function App() {
           </div>
           <div className="app-container">
             <div style={{ marginTop: '1.5rem' }}>
-              <Button
-                variant="primary"
-                onClick={() => alert('Primary Button clicked')}
-              >
-                Primary Button
-              </Button>
-              <Button
-                variant="secondary"
-                onClick={() => alert('Secondary Button clicked')}
-                style={{ marginLeft: '1rem' }}
-              >
-                Secondary Button
-              </Button>
-            </div>
-          </div>
-          <div className="app-container">
-            <div
-              style={{
-                maxWidth: '400px',
-                margin: '4rem auto',
-                padding: `${spacing.md}px`,
-                backgroundColor: colors.neutralLight,
-                borderRadius: '8px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-              }}
-            >
-              <FluidText preset="caption" as="small">
-                A tiny caption style.
-              </FluidText>
-              <TextInput
-                id="demo-input"
-                placeholder="Enter your name"
-                marginBottomKey="md"
-              />
+              <Section title="Primary & Secondary">
+                <Button variant="primary">Primary</Button>
+                <Button variant="secondary">Secondary</Button>
+              </Section>
+
+              <Section title="Sizes">
+                <Button colorPreset="mint">Mint Button</Button>
+                <Button
+                  colorPreset="brightClaret"
+                  size="lg"
+                  shape="circular"
+                  icon={<Add24Filled />}
+                />
+                <Button colorPreset="orange" variant="secondary">
+                  Orange Secondary
+                </Button>
+              </Section>
+
+              <Section title="Shapes">
+                <Button shape="rounded">Rounded</Button>
+                <Button shape="square">Square</Button>
+                <Button shape="circular" icon={<Add24Filled />} />
+              </Section>
+
+              <Section title="Icon Buttons">
+                <Button icon={<Add24Filled />} iconPosition="before">
+                  Add Item
+                </Button>
+                <Button icon={<Dismiss24Regular />} iconPosition="after">
+                  Remove
+                </Button>
+              </Section>
+
+              <Section title="Stateful">
+                <Button loading>Loading</Button>
+                <Button disabled>Disabled</Button>
+                <Button fullWidth>Full Width</Button>
+              </Section>
             </div>
           </div>
           <div className="app-container">
